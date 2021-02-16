@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken');
-const authConfig = require('../config/auth.json');
-
-
+const authConfig = require('../../config/auth.json');
 module.exports = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
@@ -25,5 +23,4 @@ module.exports = (req, res, next) => {
         req.userId = decoded.id;
         return next();
     });
-
 };
